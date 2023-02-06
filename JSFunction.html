@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"><h2>JS Function</h2></div>
+    <script>
+        var elem = document.getElementById("div1")
+
+        // (function() {
+        //     elem.innerHTML += "I called myself"
+        // })();
+
+        function myfunction(a,b) {
+            return a*b;
+        }
+        elem.innerHTML += "<br>tostring() with function<br>" + myfunction.toString()
+
+        let x = (x,y) => x*y
+        elem.innerHTML += "<br>Arrow function : (x,y) => " + x(4,5)
+
+        function sum(...args) {
+            let sum = 0
+            for(let arg of args) 
+                sum += arg
+            return sum
+        }
+
+        x = sum(4,25,30,44,89)
+        elem.innerHTML += "<br> Sum = " + x
+
+        x = findMax(1, 123, 500, 44, 1147, 88)
+        function findMax() {
+            let max = -Infinity
+            for(let i = 0; i<arguments.length; i++) {
+                if(arguments[i] > max)
+                    max = arguments[i]
+            }
+            return max;
+        }
+        elem.innerHTML += "<br> Maximum number is : " + x
+
+        const person = {
+            fullname: function() {
+                return this.firstname +" " + this.lastname;
+            }
+        }
+
+        const person1 = {
+            firstname: "John",
+            lastname: "Doe"
+        }
+
+        const person2 = {
+            firstname: "Mary",
+            lastname: "Doe"
+        }
+
+        elem.innerHTML += "<br>" + person.fullname.call(person2)
+
+        elem.innerHTML += "<br>" + typeof (person.fullname.apply(person1))
+    </script>
+</body>
+</html>

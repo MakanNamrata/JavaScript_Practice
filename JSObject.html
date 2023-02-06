@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+
+    <script>
+        var elem = document.getElementById("div1");
+
+        const person ={
+            fname: "Namrata",
+            lname: "Makan",
+            fullName: function() {
+                return this.fname + " " + this.lname;
+            }
+        };
+        elem.innerHTML += person.fullName();
+
+        //getter
+        const person2 ={
+            fname: "Ishani",
+            lname: "Makan",
+            language: "",
+            get fullName() {
+                return this.fname + " " + this.lname;
+            },
+            set lang(lang) {
+                this.language = lang.toUpperCase();
+            }
+        };
+        person2.lang = "English"
+        elem.innerHTML += "<br>" + person2.fullName + " and language = " + person2.language;
+        //constructors
+        function Fperson(first, last, age) {
+            this.firstname = first;
+            this.lastname = last;
+            this.age = age;
+        }
+        const father = new Fperson("Shailesh", "Makan", 50)
+        elem.innerHTML += "<br><br>my father " + father.firstname + " is " + father.age
+
+        //Prototype
+        Fperson.prototype.nationality = "English"
+        elem.innerHTML += "<br>Father's nationality is :" + father.nationality
+
+        Fperson.prototype.name = function(){
+            return this.firstname + " " + this.lastname
+        }
+        
+        elem.innerHTML += "<br>" + father.name() + " nationality is " + father.nationality 
+
+        //Iterating over array
+        let letter = ["a","b","c","d","e"]
+        let text = ""
+        for(var x of letter) {
+            text += x + "<br>"
+        }
+        elem.innerHTML += "<br>" +text
+
+        //symbol.iterator using for...of loop
+        mynumbers = {};
+
+        mynumbers[Symbol.iterator] = function() {
+            let n = 0;
+            done= false;
+            return{
+                next() {
+                    n+= 10;
+                    if(n==100) { done= true}
+                    return {value:n, done:done}
+                }
+            }
+        }
+
+        text = ""
+        for(var num of mynumbers) {
+            text += num + "<br>"
+        }
+        elem.innerHTML += "<br>" + text
+
+        //using while loop
+        let iterator = mynumbers[Symbol.iterator]();
+        text = "";
+        while (true) {
+            var result = iterator.next();
+            if(result.done) break;
+            text += result.value + "<br>"
+        }
+        elem.innerHTML += "<br>" + text
+    
+        //set using array
+        letter = new Set(["a","b","c","d"])
+        elem.innerHTML += "<br> letters size : " + letter.size
+
+        //set using value
+        letter.add("a")
+        letter.add("f")
+        elem.innerHTML += "<br> letters size : " + letter.size
+
+        //foreach() 
+        text= ""
+        letter.forEach(function(value) {
+            text+=value + " "
+        })
+        elem.innerHTML += "<br>" + text
+        
+        //.values()
+        elem.innerHTML += "<br>.values() : " + letter.values()
+        elem.innerHTML += "<br>.entries() : " + letter.entries()
+        elem.innerHTML += "<br>type of letter set : " + typeof letter
+
+        //Map
+        //Passing array to the map
+        var fruits = new Map([
+            ["Apple", 500],
+            ["Banana", 300],
+            ["Orange", 200]
+        ])
+        elem.innerHTML += "<h3>Maps</h3>"
+        elem.innerHTML += "fruites.get() to get the value of apple : " + fruits.get("Apple")
+
+        fruits.set("Kiwi", 600)
+        elem.innerHTML += "<br> Using .set kiwi : " + fruits.get("Kiwi") 
+
+        elem.innerHTML += "<br> type of fruits Map : " + typeof fruits;
+        elem.innerHTML += "<br>fruits instance of  Map : " + (fruits instanceof Map);
+
+
+        var roles = {
+            type:"Admin",
+            displaytype: function(){
+                elem.innerHTML += "<br><i>" + this.type + "</i>" 
+            }
+        }
+
+        var super_role = Object.create(roles)
+        super_role.displaytype();
+
+        var det  = {name: "Tom", Id: "E1001"}
+        var copy = Object.assign({},det)
+        elem.innerHTML += "<br>" + copy
+        for(let val in copy) {
+            elem.innerHTML += "<br>" + copy[val]
+        }
+
+        var student = {
+            rollno: 20,
+            name: "Namrata",
+            cgpa: 7.2
+        }
+
+        //de-structuring object to same property
+        var {name,cgpa} = student
+        elem.innerHTML += "<br>"+ name;
+        elem.innerHTML += cgpa;
+
+
+    </script>
+</body>
+</html>

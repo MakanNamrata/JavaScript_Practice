@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"> Hello From Javascript</div>
+    <button onclick='document.getElementById("demo").innerHTML = "Hello World"'>Click me</button>
+
+    <button onclick='document.getElementById("demo").style.fontSize="40px"'>Font Size</button>
+
+    <button onclick='document.getElementById("demo").style.display="none"'>Hide</button>
+
+    <button onclick='document.getElementById("demo").style.display="block"'>display block</button>
+
+    <br><br>
+    <div id="sum">Sum of 10 and 30 = </div>
+
+    <br><br>
+    <button onclick="document.write(10+20)" >click me to get 10+20</button>
+    <br><br>
+    <button onclick="window.print()" >Print this page</button>
+
+    <br><br>
+    <div id="p1"></div>
+
+    <br><br>
+    <div id="p2"></div>
+
+    <br><br>
+    <div id="p3"></div>
+
+    <br><br>
+    <div id="p4"></div>
+
+    <br><br>
+    <div id="p5"></div>
+
+    <br><br>
+    <div id="p6"></div>
+
+    <br><br>
+    <div id="p7"></div>
+
+    <br><br>
+    <div id="p8"></div>
+
+    <br><br>
+    <div id="p9"></div>
+
+    <br><br>
+    <div id="p10"></div>
+
+    <script>
+        // window.alert("10 + 50 = " + (10+50));
+        // alert(40+40);
+        // console.log(10+10);
+        document.getElementById("sum").innerHTML += 10+30;
+        let x,y,z;
+        x=5; y=10
+        z=x+y;
+        document.getElementById("p1").innerHTML = "Sum of " + x + " and " + y + " = " + z
+
+        const cars = ["Volvo", "BMW"]
+        document.getElementById("p2").innerHTML += "cars = " + cars;
+        cars[0] = "Toyota";
+        document.getElementById("p2").innerHTML += "car[0] = " + cars[0];
+        cars.push("Audi")
+        document.getElementById("p2").innerHTML += "cars = " + cars;
+
+        const car = { type:"Fiat", model:500, color:"red" }
+        car.color = "white"
+        car.owner = "Namrata"
+        document.getElementById("p3").innerHTML += "car type = " + car.type + "Color = " + car.color + "Owner =" + car.owner; 
+
+        x= 5+5; 
+        y= "5" + 5;
+        z= "hello" + 5;
+        document.getElementById("p4").innerHTML = "x " + x + " y " + y + " z " + z
+
+        x=100;
+        x<<=5;
+        document.getElementById("p5").innerHTML += "(x=100) x<<=5: " + x 
+
+        x>>=5
+        document.getElementById("p5").innerHTML += " x>>=5: " + x
+
+        x>>>=5
+        document.getElementById("p5").innerHTML += " x>>>=5: " + x
+
+        x=10; 
+        x &= 5
+        document.getElementById("p5").innerHTML += " x&=5: " + x
+
+        x=10; 
+        x |= 5
+        document.getElementById("p5").innerHTML += " x|=5: " + x
+
+        document.getElementById("p6").innerHTML += " typeof x : " + typeof x
+
+        function myfunction(a, b) {
+            return a*b;
+        }
+        x = myfunction(4, 3)
+        document.getElementById("p7").innerHTML += " function demo (4*3) : " + x
+
+        const person = {
+            FirstName:"Namrata",
+            lastName:"Makan",
+            fullname: function() {
+                return this.FirstName + " " + this.lastName;
+            }
+        }
+        document.getElementById("p8").innerHTML += " Full Name : " + person.fullname()
+
+        let html = `<h2>Cars Detail</h2><ul>`
+        for(const c of cars) {
+            html += `<li>${c}</li>`;
+        }
+        html += `</ul>`;
+        document.getElementById('p9').innerHTML += html;
+
+        document.getElementById('p10').innerHTML += "If cars is typeof array : " + Array.isArray(cars)
+
+        
+
+    </script>
+</body>
+</html>

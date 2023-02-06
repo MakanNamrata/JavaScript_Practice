@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+
+    <script>
+        let text = "Namrata Makan"
+        var elem = document.getElementById("div1")
+        // elem.innerHTML += text
+
+        // elem.innerHTML += "<br>length of text = "+text.length
+        // elem.innerHTML += "<br> it's alright."
+        // elem.innerHTML += "<br>it\'s alright."
+        // elem.innerHTML += "<br>it\'s \"Namrata\" \n Makan."
+
+        // let x=new String("John")
+        // let y = "John"
+        // elem.innerHTML += "<br><br> type of x and y is " + typeof x + " and " + typeof y  
+        // elem.innerHTML += "<br>using == " + (x==y)
+        // elem.innerHTML += "<br>using === " + (x===y)
+
+        // elem.innerHTML += "<h3>String Method</h3>"
+
+        // text = "Apple, Banana, Kiwi";
+        // let part = text.slice(7,13)
+        // elem.innerHTML += "text : " + text
+        // elem.innerHTML += "<br>text.slice(7,13) = " + part
+        // elem.innerHTML += "<br>text.slice(7) = " + text.slice(7)
+        // elem.innerHTML += "<br>text.slice(-12,-6) = " + text.slice(-12,-6)
+        // elem.innerHTML += "<br>text.slice(-12) = " + text.slice(-12)
+
+        // elem.innerHTML += "<br><br>text : " + text
+        // elem.innerHTML += "<br>text.substring(7,13) = " + text.substring(7,13)
+        // elem.innerHTML += "<br>text.substring(7) = " + text.substring(7)
+        // elem.innerHTML += "<br>text.substring(-12) = " + text.substring(-1)
+
+        // elem.innerHTML += "<br><br>text : " + text
+        // elem.innerHTML += "<br>text.substr(7,13) = " + text.substr(7,10)
+        // elem.innerHTML += "<br>text.substr(7) = " + text.substr(7)
+        // elem.innerHTML += "<br>text.substr(-12) = " + text.substr(-1)
+
+        // text = "Please visit Microsoft and Microsoft";
+        // let newtext = text.replace("Microsoft", "W3Schools");
+        // elem.innerHTML += "<br><br>text : " + text
+        // elem.innerHTML += "<br>text is replaced by w3schools = " + newtext
+
+        // newtext= text.replace("MICROSOFT", "W3Schools")
+        // elem.innerHTML += "<br>text will not replaced by w3schools = " + newtext
+
+        // newtext= text.replace(/MICROSOFT/i, "W3Schools")
+        // elem.innerHTML += "<br><br>text will replaced by w3schools as it ignored by /i = " + newtext
+
+        // newtext= text.replace(/MICROSOFT/ig, "W3Schools")
+        // elem.innerHTML += "<br><br>text will replaced by w3schools (globally) = " + newtext
+
+        // newtext= text.replaceAll(/MICROSOFT/ig, "W3Schools")
+        // elem.innerHTML += "<br><br>text will replaced by w3schools (globally) = " + newtext
+        
+        // elem.innerHTML += "<br><br>text to upper case = " + text.toUpperCase();
+        // elem.innerHTML += "<br>text to lower case = " + text.toLowerCase();
+        
+        // let text1 = "Namrata";
+        // let text2 = "Makan";
+        // elem.innerHTML += "<br><br>text after concat = " + text1.concat(" ", text2);
+        
+        text1 = "       Namrata             Makan   "
+        // elem.innerHTML += "<br><br>text after trim = " + text1.trim();
+
+        // let text3 = text1.trimStart();
+        // elem.innerHTML += "<br><br>text length = " + text1.length;
+        // elem.innerHTML += "<br><br>text after trimstart = " + text3.length;
+        // text3 = text1.trimEnd();
+        // elem.innerHTML += "<br><br>text after trimEnd = " + text3.length;
+        
+        // text1 = "5";
+        // let padded = text1.padStart(4,"x");
+        // elem.innerHTML += "<br><br>"+text1+" text after padstart = " + padded;
+
+        // elem.innerHTML += "<br><br>"+text1+" text after padEnd = " + text1.padEnd(4,"0");
+
+        // text3 = "Hello Word"
+        // elem.innerHTML += "<br><br>"+text3+"<br>text at position 0 = " + text3.charAt(0);
+
+        // elem.innerHTML += "<br><br>"+text1+" char code of position 0 = " + text3.charCodeAt(0);
+
+        // elem.innerHTML += "<br><br>"+text1+" using property access[] = " + text3[0];
+
+        // elem.innerHTML += "<h3> Converting string to Array </h3>";
+
+        // text3 = "a,b,c,d,e,f,g"
+        // elem.innerHTML += "<br>"+ typeof text3 +
+        // "<br>split text = " + typeof (text3.split(","));
+
+        // let arr = text3.split(",")
+        // elem.innerHTML += "<br>Is array ? " + Array.isArray(arr)
+
+        let str = "Please locate where 'locate' occurs!"
+        elem.innerHTML += "<h3>String Searching</h3>"
+        elem.innerHTML += "original text : " + str
+
+        //find first match
+        elem.innerHTML += "<br>index of 'locate' : " + str.indexOf("locate")
+        //find last match
+        elem.innerHTML += "<br>last index of 'locate' : " + str.lastIndexOf("locate")
+
+        elem.innerHTML += "<br><br>index of 'locate' using search() : " + str.search("locate")
+
+        elem.innerHTML += "<br>index of 'locate' using search() with reg. exr. : " + str.search(/locate/)
+
+        str = "The rain in SPAIN stays mainly in the plain"
+        let arr1 = str.match("ain")
+        elem.innerHTML += "<br><br>match() : " + arr1.length + " " + arr1
+
+        arr1 = str.match(/ain/g)
+        elem.innerHTML += "<br><br>match() : " + arr1.length + " " + arr1
+
+        var x = Number.EPSILON
+        elem.innerHTML += "<br>EPSILON returns diff between js smallest floating point number and 1 :" + x
+
+        //Nested object\
+        var x = "";
+        const myObj = {
+        name: "John",
+        age: 30,
+        cars: [
+            {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+            {name:"BMW", models:["320", "X3", "X5"]},
+            {name:"Fiat", models:["500", "Panda"]}
+        ]
+        }
+
+        for (let i in myObj.cars) {
+        x += "<h2>" + myObj.cars[i].name + "</h2>";
+        for (let j in myObj.cars[i].models) {
+            x += myObj.cars[i].models[j] + "<br>";
+        }
+        }
+
+        elem.innerHTML += "<br>" + x 
+        elem.innerHTML += "<br>" + JSON.stringify(myObj);
+
+    </script>
+</body>
+</html>

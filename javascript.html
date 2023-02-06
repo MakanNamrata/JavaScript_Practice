@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">Array Method</div>
+
+    <div id="div2"><h3>Concatination</h3></div>
+
+    <script>
+        const fruits = ["Apple", "Banana", "Kiwi"];
+        document.getElementById('div1').innerHTML += " <br> fruits.tostring() = " + fruits.toString();
+        document.getElementById('div1').innerHTML += " <br> fruits.join( * ) = " + fruits.join(" * ");
+
+        fruits.pop()
+        document.getElementById('div1').innerHTML += "<br>fruits.pop() = " + fruits.toString();
+
+        fruits.push("Kiwi");
+        fruits.push("Mango")
+        document.getElementById('div1').innerHTML += "<br>fruits.push() = " + fruits.push("Orange");
+        document.getElementById('div1').innerHTML += "<br>fruits = " + fruits;   
+
+        document.getElementById('div1').innerHTML += "<br>fruits.shift() = " + fruits.shift() + "<br>" + fruits;
+
+        fruits.unshift("Lemon")
+        document.getElementById('div1').innerHTML += "<br>fruits.unshift() = " + fruits;
+
+        fruits.shift();
+        fruits[0] = "Lemon"
+        document.getElementById('div1').innerHTML += "<br>fruits[0] lemon = " + fruits;
+             
+        document.getElementById('div1').innerHTML += "<br>fruits[fruits.length] banana = " + ( fruits[fruits.length] = "Banana" )
+         + " <br> fruits after apending : " + fruits;
+
+         document.getElementById('div1').innerHTML += "<br>delete fruits[0] = " + (delete fruits[0]) + "<br>After deletion: " + fruits;
+
+         const boys = ["Joe", "John"]
+         const girls = ["Jenny", "Honey"]
+         const person = girls.concat(boys);
+         document.getElementById('div2').innerHTML += "<br>girls = " + girls +" <br>Boys = " + boys + "<br>person = " + person;
+
+         const person1 = girls.concat("Dolly")
+         document.getElementById('div2').innerHTML += "<br>after concat, girls = " + person1
+
+         fruits.shift()
+         fruits.splice(2,0, "Apple", "Lemon")
+         document.getElementById('div1').innerHTML += "<br><h3>Slicing</h3>fruits = " + fruits
+
+         let removed = fruits.splice(2,2,"Pinapple")
+         document.getElementById('div1').innerHTML += "<br>new array = " + fruits
+         document.getElementById('div1').innerHTML += "<br>removed element = " + removed  
+
+         
+         document.getElementById('div1').innerHTML += "<br><br>original array = " + fruits
+         slicefruits = fruits.slice(2);
+         document.getElementById('div1').innerHTML += "<br>slice elements = " + slicefruits + " <br>fruits new : " + fruits
+
+         slicefruits2 = fruits.slice(1,3);
+         document.getElementById('div1').innerHTML += "<br>slice elements2 = " + slicefruits2 + " <br>fruits new : " + fruits
+
+         document.getElementById('div1').innerHTML += "<br><h3>Sorting</h3> original fruits = " + fruits
+         document.getElementById('div1').innerHTML += "<br>sorted fruits = " + fruits.sort()
+         document.getElementById('div1').innerHTML += "<br>reverse fruits = " + fruits.reverse()
+         
+        const points = [40,10,60,5,50,100,44]
+        document.getElementById('div1').innerHTML += "<br>points = " + points
+        
+        document.getElementById('div1').innerHTML += "<br>number sorted points without function = " + points.sort()
+        document.getElementById('div1').innerHTML += "<br>number sorted points = " + points.sort(function(a,b) { return a-b })
+        document.getElementById('div1').innerHTML += "<br>number sorted points (desc) = " + points.sort(function(a,b) { return b-a })
+        //document.getElementById('div1').innerHTML += "<br>random sorted points = " + points.sort(function() { return 0.5 - Math.random() })
+
+        document.getElementById('div1').innerHTML += "<br>Math Max = " + myMathMaxArray(points)
+        document.getElementById('div1').innerHTML += "<br>Math Min = " + myMathMinArray(points)
+
+        function myMathMaxArray(arr){
+            return Math.max.apply(null, arr)
+        }
+        function myMathMinArray(arr){
+            return Math.min.apply(null, arr)
+        }
+
+        const cars =[{ type:"Volvo", year:2016},{ type:"Saab", year:2001}, { type:"BMW", year:2014}]
+
+        cars.sort(function(a, b){return a.year - b.year});
+        displayCars();
+        function displayCars() {
+            document.getElementById("div1").innerHTML += "<br>" +
+            cars[0].type + " " + cars[0].year + "<br>" +
+            cars[1].type + " " + cars[1].year + "<br>" +
+            cars[2].type + " " + cars[2].year;
+        }
+        let txt = "";
+        points.forEach(myfunction);
+        document.getElementById("div1").innerHTML += "<br>" + txt;
+
+        function myfunction(value) {
+            txt += value + "  ";
+        }
+
+    </script>
+</body>
+</html>

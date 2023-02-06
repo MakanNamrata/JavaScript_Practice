@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        let txt = "";
+        const numbers1 = [45, 4, 9, 16, 25];
+        function myfunction(value) {
+            return value * 2
+        }
+        const number = numbers1.map(myfunction);
+        document.getElementById("div1").innerHTML += numbers1
+        document.getElementById("div1").innerHTML += "<br>value*2 = " + number
+
+        function myfunction2(value) {
+            return value > 18
+        }
+        const number2 = numbers1.map(myfunction2);
+        document.getElementById("div1").innerHTML += "<br>filter >18 = " + number2
+
+        let sum = numbers1.reduce(myFunction);
+        document.getElementById("div1").innerHTML += "<br>reduce = " + sum
+        function myFunction(total, value) {
+            return total + value;
+        }
+
+    </script>
+</body>
+</html>
